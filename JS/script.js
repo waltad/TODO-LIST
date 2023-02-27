@@ -1,34 +1,52 @@
 {
-    const tasks = [
-        {
-            content: "nagrać lekcję",
-            done: false,
-        },
-        {
-            content: "zjeść pierogi",
-            done: true,
-        },
-    ];
+  const tasks = [
+    {
+      content: "nagrać lekcję",
+      done: false,
+    },
+    {
+      content: "zjeść pierogi",
+      done: true,
+    },
+  ];
 
-    const render = () => {
-        let htmlString = "";
+  const render = () => {
+    let htmlString = "";
 
-        for (const task of tasks) {
-            htmlString += `
-                <li
-                    ${task.done ? " style=\"text-decoration: line-through\"" : ""}
-                >
-                    ${task.content}
-                </li>
-            `;
+    for (const task of tasks) {
+      htmlString += `
+        <li
+          ${task.done ? " style=\"text-decoration: line-through\"" : ""}
+        >
+          ${task.content}
+        </li>
+        `;
 
-            document.querySelector(".js-tasks").innerHTML = htmlString;
-        };
+      document.querySelector(".js-tasks").innerHTML = htmlString;
     };
+  };
 
-    const init = () => {
-        render();
-    };
+  const init = () => {
+    render();
 
-    init();
+    const form = document.querySelector(".js-form");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      newTaskContent = document.querySelector(".js-newTask").value.trim();
+      
+      if (newTaskContent === "") {
+        return;
+      }
+
+      tasks.push({
+        content: newTaskContent,
+      });
+
+      render();
+    });
+  };
+
+  init();
 }
