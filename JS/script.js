@@ -28,6 +28,25 @@
 		render();
 	};
 
+	const bindEvents = () => {
+		
+		const removeButtons = document.querySelectorAll(".js-remove");
+		
+		removeButtons.forEach((removeButton, index) => {
+				removeButton.addEventListener("click", () => {
+					removeTask(index);
+				});
+		});
+
+		const taggleDoneButtons = document.querySelectorAll(".js-done");
+		
+		taggleDoneButtons.forEach((taggleDoneButton, index) => {
+				taggleDoneButton.addEventListener("click", () => {
+					taggleTaskDone(index);
+				});
+		});
+	};
+
   const render = () => {
     let htmlString = "";
 
@@ -41,25 +60,11 @@
 					${task.content}
         </li>
         `;
+		};
+		
+		document.querySelector(".js-tasks").innerHTML = htmlString;
 
-      document.querySelector(".js-tasks").innerHTML = htmlString;
-
-			const removeButtons = document.querySelectorAll(".js-remove");
-			
-			removeButtons.forEach((removeButton, index) => {
-					removeButton.addEventListener("click", () => {
-						removeTask(index);
-					});
-			});
-
-			const taggleDoneButtons = document.querySelectorAll(".js-done");
-			
-			taggleDoneButtons.forEach((taggleDoneButton, index) => {
-					taggleDoneButton.addEventListener("click", () => {
-						taggleTaskDone(index);
-					});
-			});
-    };
+		bindEvents();
   };
 
 	const onFormSubmit = (event) => {
