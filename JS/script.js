@@ -26,26 +26,33 @@
     };
   };
 
+	const addNewTask = (newTaskContent) => {
+		tasks.push({
+			content: newTaskContent,
+		});
+
+		render();
+	};
+
+	const onFormSubmit = (event) => {
+		event.preventDefault();
+
+		newTaskContent = document.querySelector(".js-newTask").value.trim();
+		
+		if (newTaskContent === "") {
+			return;
+		}
+
+		addNewTask(newTaskContent);
+		
+	}
+
   const init = () => {
     render();
 
     const form = document.querySelector(".js-form");
 
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      newTaskContent = document.querySelector(".js-newTask").value.trim();
-      
-      if (newTaskContent === "") {
-        return;
-      }
-
-      tasks.push({
-        content: newTaskContent,
-      });
-
-      render();
-    });
+    form.addEventListener("submit", onFormSubmit);
   };
 
   init();
