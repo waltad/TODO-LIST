@@ -1,0 +1,14 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px 30px;
+    background-color: hsl(0, 0%, 90%);
+    word-break: break-word;
+}
