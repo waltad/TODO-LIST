@@ -11,7 +11,7 @@
     justify-content: space-between;
     background-color: white;
     padding: 20px 0 20px 20px;
-    margin: 2px;
+    margin: 2px 2px 10px 2px;
 }
 
 .form__field {
@@ -26,4 +26,11 @@
     color: white;
     padding: 5px;
     margin:  0 10px 0 20px;
+}
+
+.tasks--block {
+    list-style-type: none;
+    background-color: white;
+    padding: 20px;
+    margin: 2px;
 }
