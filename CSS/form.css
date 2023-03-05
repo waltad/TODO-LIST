@@ -7,7 +7,6 @@
 .form__lebel {
     display: flex;
     flex-flow: row;
-    /* flex: auto; */
     justify-content: space-between;
     background-color: white;
     padding: 20px 0 20px 20px;
@@ -15,7 +14,7 @@
 }
 
 .form__field {
-    flex: 1 1 70%;
+    flex-grow: 1;
     border: solid 2px hsl(0, 0%, 90%);
     padding: 5px;
 }
