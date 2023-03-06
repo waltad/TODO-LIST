@@ -67,16 +67,23 @@
 		bindEvents();
 	};
 
+	const clearValue = () => {
+		newTask = document.querySelector(".js-newTask");
+		newTask.value = "";
+	}
+
 	const onFormSubmit = (event) => {
 		event.preventDefault();
 
 		newTaskContent = document.querySelector(".js-newTask").value.trim();
-
+		
 		if (newTaskContent === "") {
 			return;
 		}
 
 		addNewTask(newTaskContent);
+
+		clearValue();
 	};
 
 	const init = () => {
