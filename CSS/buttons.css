@@ -1,9 +1,9 @@
 .button__task {
-    border: none;
-    background-color: white;
+  border: none;
+  background-color: white;
 }
 
 .button__remove {
-    border: none;
-    background-color: red;
+  border: none;
+  background-color: red;
 }
