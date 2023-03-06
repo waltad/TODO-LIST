@@ -70,6 +70,7 @@
 	const clearValue = () => {
 		newTask = document.querySelector(".js-newTask");
 		newTask.value = "";
+		newTask.focus();
 	}
 
 	const onFormSubmit = (event) => {
