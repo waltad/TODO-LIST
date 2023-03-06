@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo list</title>
+  <link rel="icon" href="images/icon.png">
+  <meta property="og:image" content="images/share.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,6 +15,7 @@
   <link href="CSS/form.css" rel="stylesheet">
   <link href="CSS/lists.css" rel="stylesheet">
   <link href="CSS/buttons.css" rel="stylesheet">
+  <link href="CSS/header.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -22,7 +25,7 @@
 
 <body>
   <h1>Lista zadań</h1>
-  <h3 class="form__header">Dodaj nowe zadanie</h3>
+  <h3 class="header">Dodaj nowe zadanie</h3>
 
   <form class="js-form">
     <label class="form__lebel">
@@ -31,8 +34,8 @@
     </label>
   </form>
 
-  <h3 class="form__header">Lista zadań</h3>
-  <ul class="js-tasks tasks--block"></ul>
+  <h3 class="header">Lista zadań</h3>
+  <ul class="js-tasks list__block"></ul>
 
 </body>
 
