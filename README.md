@@ -23,7 +23,8 @@ TODO LIST uses a number of open source projects to work properly:
 - [HTML] - HyperText Markup Language
 - [JS] - JavaScript
 - [CSS] - Cascading Style Sheets
-- [BEM] - Blocks, Elements and Modifiers
+- [BEM] - Blocks, Elements and Modifiers - CSS block naming technology that takes page layout into account
+- [Media queries] - allow you to apply CSS styles depending on the presence or value of device characteristics
   
 ## Installation
 

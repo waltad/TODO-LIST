@@ -12,3 +12,9 @@ body {
     background-color: hsl(0, 0%, 90%);
     word-break: break-word;
 }
+
+@media (max-width: 767px) {
+    body {
+        padding: 5px 15px;
+    }    
+}

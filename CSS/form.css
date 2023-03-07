@@ -20,3 +20,13 @@
   padding: 5px;
   margin: 0 10px 0 20px;
 }
+
+@media (max-width: 767px) {
+  .form__lebel {
+      flex-direction: column;
+      padding: 20px;
+  }
+  .form__button {
+    margin: 10px;
+  }
+}
