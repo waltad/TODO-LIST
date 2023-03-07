@@ -1,7 +1,7 @@
 # TODO LIST
 ## to-do list
-New version
-![New version](images/introduction.gif)
+
+![TO-DO LIST PRESENTATION](images/introduction.gif)
 
 It is a taks list. 
 
