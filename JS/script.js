@@ -59,8 +59,7 @@
 		bindEvents();
 	};
 
-	const clearValue = () => {
-		newTask = document.querySelector(".js-newTask");
+	const clearValue = (newTask) => {
 		newTask.value = "";
 		newTask.focus();
 	}
@@ -68,15 +67,17 @@
 	const onFormSubmit = (event) => {
 		event.preventDefault();
 
-		newTaskContent = document.querySelector(".js-newTask").value.trim();
+		newTask = document.querySelector(".js-newTask");
+		newTaskContent = newTask.value.trim();
 		
 		if (newTaskContent === "") {
+			newTask.focus();
 			return;
 		}
 
 		addNewTask(newTaskContent);
 
-		clearValue();
+		clearValue(newTask);
 	};
 
 	const init = () => {
