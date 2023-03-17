@@ -48,7 +48,6 @@
         >
           <button class="js-done button__task">${task.done ? "&#x2705" : "&#x1F7E9"}</button>
           <p class="${task.done ? "list__item--done" : ""}">${task.content}</p>
-          <p class="list__spaces"></p>
           <button class="js-remove button__remove">&#x1F5D1</button>
         </li>
         `;

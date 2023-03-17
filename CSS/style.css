@@ -9,7 +9,7 @@ html {
 body {
     font-family: 'Ubuntu', sans-serif;
     padding: 10px 30px;
-    background-color: hsl(0, 0%, 90%);
+    background-color: #ddd;
     word-break: break-word;
 }
 
