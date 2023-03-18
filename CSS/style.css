@@ -8,13 +8,6 @@ html {
 
 body {
     font-family: 'Ubuntu', sans-serif;
-    padding: 10px 30px;
     background-color: #ddd;
     word-break: break-word;
-}
-
-@media (max-width: 767px) {
-    body {
-        padding: 5px 15px;
-    }    
 }

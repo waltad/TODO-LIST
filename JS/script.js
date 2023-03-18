@@ -46,9 +46,15 @@
         <li
           class="list__item"
         >
-          <button class="js-done button__task">${task.done ? "&#x2705" : "&#x1F7E9"}</button>
-          <p class="${task.done ? "list__item--done" : ""}">${task.content}</p>
-          <button class="js-remove button__remove">&#x1F5D1</button>
+          <button class="js-done button__task button__task--taggleDone">
+		  	${task.done ? "&#x2714" : ""}
+		  </button>
+          <p class="${task.done ? "list__item--done" : ""}">
+		  	${task.content}
+		  </p>
+          <button class="js-remove button__task button__task--remove">
+		  	&#x1F5D1
+		  </button>
         </li>
         `;
 		};
