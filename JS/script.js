@@ -19,8 +19,7 @@
 		render();
 	};
 
-	const bindEvents = () => {
-
+	const bindRemoveEvents = () => {
 		const removeButtons = document.querySelectorAll(".js-remove");
 
 		removeButtons.forEach((removeButton, index) => {
@@ -28,8 +27,10 @@
 				removeTask(index);
 			});
 		});
+	};
 
-		const taggleDoneButtons = document.querySelectorAll(".js-done");
+	const bindTaggleDoneEvents = () => {
+		const taggleDoneButtons = document.querySelectorAll(".js-taggleDone");
 
 		taggleDoneButtons.forEach((taggleDoneButton, index) => {
 			taggleDoneButton.addEventListener("click", () => {
@@ -46,7 +47,7 @@
         <li
           class="list__item"
         >
-          <button class="js-done button__task button__task--taggleDone">
+          <button class="js-taggleDone button__task button__task--taggleDone">
 		  	${task.done ? "&#x2714" : ""}
 		  </button>
           <p class="${task.done ? "list__item--done" : ""}">
@@ -61,12 +62,12 @@
 
 		document.querySelector(".js-tasks").innerHTML = htmlString;
 
-		bindEvents();
+		bindRemoveEvents();
+		bindTaggleDoneEvents();
 	};
 
 	const clearValue = (newTask) => {
 		newTask.value = "";
-		newTask.focus();
 	}
 
 	const onFormSubmit = (event) => {
@@ -76,13 +77,12 @@
 		newTaskContent = newTask.value.trim();
 		
 		if (newTaskContent === "") {
-			newTask.focus();
+			addNewTask(newTaskContent);
+			clearValue(newTask);
 			return;
 		}
 
-		addNewTask(newTaskContent);
-
-		clearValue(newTask);
+		newTask.focus();
 	};
 
 	const init = () => {
