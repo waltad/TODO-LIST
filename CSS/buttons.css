@@ -1,11 +1,32 @@
 .button__task {
   border: none;
-  background-color: white;
-  font-size: xx-large;
+  color: white;
+  width: 30px;
+  height: 30px;
+  padding: 0;
 }
 
-.button__remove {
+.button__task--taggleDone {
+  background-color: hsl(120, 100%, 30%);
+}
+
+.button__task--taggleDone:hover {
+  background-color: hsl(120, 100%, 35%);
+}
+
+.button__task--taggleDone:active {
+  background-color: hsl(120, 100%, 40%);
+}
+
+.button__task--remove {
   border: none;
-  background-color: red;
-  font-size: xx-large;
+  background-color: hsl(0, 100%, 45%);
+}
+
+.button__task--remove:hover {
+  background-color: hsl(0, 100%, 60%);
+}
+
+.button__task--remove:active {
+  background-color: hsl(0, 100%, 70%);
 }
