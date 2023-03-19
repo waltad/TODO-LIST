@@ -11,6 +11,17 @@
   border-bottom: 1px solid #ddd;
 }
 
+.section__navigation {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+@media (max-width: 767px) {
+  .section__navigation {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section__body {
   padding: 20px;
 }
