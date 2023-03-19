@@ -4,7 +4,7 @@
 
 	const addNewTask = (newTaskContent) => {
 		tasks = [...tasks,
-			{content: newTaskContent},
+		{ content: newTaskContent },
 		];
 
 		render();
@@ -17,6 +17,11 @@
 
 	const taggleTaskDone = (taskIndex) => {
 		tasks[taskIndex].done = !tasks[taskIndex].done;
+		render();
+	};
+
+	const taggleTaskDoneHide = (hideDoneTasks) => {
+		hideDoneTasks = !hideDoneTasks;
 		render();
 	};
 
@@ -44,30 +49,62 @@
 		let htmlString = "";
 
 		for (const task of tasks) {
-			htmlString += `
-        <li
-          class="list__item"
-        >
-          <button class="js-taggleDone button__task button__task--taggleDone">
-		  	${task.done ? "&#x2714" : ""}
-		  </button>
-          <p class="${task.done ? "list__item--done" : ""}">
-		  	${task.content}
-		  </p>
-          <button class="js-remove button__task button__task--remove">
-		  	&#x1F5D1
-		  </button>
-        </li>
-        `;
+			if (!hideDoneTasks) {
+				htmlString += `
+			<li
+			class="list__item"
+			>
+			<button class="js-taggleDone button__task button__task--taggleDone">
+				${task.done ? "&#x2714" : ""}
+			</button>
+			<p class="${task.done ? "list__item--done" : ""}">
+				${task.content}
+			</p>
+			<button class="js-remove button__task button__task--remove">
+				&#x1F5D1
+			</button>
+			</li>
+			`;
+			} else {
+				htmlString += `
+			<li
+			class="list__item"${task.done ? "list__item--hide" : ""}
+			>
+			<button class="js-taggleDone button__task button__task--taggleDone">
+			</button>
+			<p>
+				${task.content}
+			</p>
+			<button class="js-remove button__task button__task--remove">
+				&#x1F5D1
+			</button>
+			</li>
+			`;
+			}
 		};
 
 		document.querySelector(".js-tasks").innerHTML = htmlString;
 	};
 
-	const renderButtons = () => {};
+	const renderButtons = () => {
+		let htmlStringButtons = "";
+		
+		if (tasks.length !== 0) {
+			htmlStringButtons += `
+			<botton class ="button__navigation">
+				Ukryj ukończone
+			</botton>
+			<botton class ="button__navigation">
+				Ukończ wszystkie
+			</botton>
+			`;
+		}
 
-	const bindButtonsEvents = () => {};
-	
+		document.querySelector(".js-navigationBattons").innerHTML = htmlStringButtons;
+	};
+
+	const bindButtonsEvents = () => { };
+
 	const render = () => {
 		renderTasks();
 		renderButtons();
@@ -87,14 +124,14 @@
 
 		newTask = document.querySelector(".js-newTask");
 		newTaskContent = newTask.value.trim();
-		
+
 		if (newTaskContent !== "") {
 			addNewTask(newTaskContent);
 			clearValue(newTask);
 			return;
 		}
 
-		newTask.focus();	
+		newTask.focus();
 	};
 
 	const init = () => {
