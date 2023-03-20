@@ -76,8 +76,7 @@
 			<li
 			class="list__item${task.done ? "list__item--hide" : ""}"
 			>
-			<button class="${task.done ? "button__task--hide" : "js-taggleDone button__taskjs-taggleDone button__task button__task--taggleDone"}">
-				${task.done ? "&#x2714" : ""}
+			<button class="${task.done ? "button__task--hide" : "js-taggleDone button__task button__task button__task--taggleDone"}">
 			</button>
 			<p class="${task.done ? "list__item--hide" : ""}">
 				${task.content}
