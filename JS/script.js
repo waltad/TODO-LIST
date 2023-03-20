@@ -55,12 +55,11 @@
 		let htmlString = "";
 
 		for (const task of tasks) {
-			if (!hideDoneTasks) {
-				htmlString += `
+			htmlString += `
 			<li
-			class="list__item"
+			class="${task.done & hideDoneTasks ? "list__item--hide" : "list__item"}"
 			>
-			<button class="js-taggleDone button__task button__task--taggleDone">
+			<button class="js-taggleDone button__task button__task--taggleDone"}">
 				${task.done ? "&#x2714" : ""}
 			</button>
 			<p class="${task.done ? "list__item--done" : ""}">
@@ -71,22 +70,6 @@
 			</button>
 			</li>
 			`;
-			} else {
-				htmlString += `
-			<li
-			class="list__item${task.done ? "list__item--hide" : ""}"
-			>
-			<button class="${task.done ? "button__task--hide" : "js-taggleDone button__task button__task button__task--taggleDone"}">
-			</button>
-			<p class="${task.done ? "list__item--hide" : ""}">
-				${task.content}
-			</p>
-			<button class="${task.done ? "button__task--hide" : "js-remove button__task button__task--remove"}">
-				&#x1F5D1
-			</button>
-			</li>
-			`;
-			}
 		};
 
 		document.querySelector(".js-tasks").innerHTML = htmlString;
