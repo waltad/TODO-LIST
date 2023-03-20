@@ -6,10 +6,6 @@
   padding: 0;
 }
 
-.button__task--hide {
-  display: none;
-}
-
 .button__task--taggleDone {
   background-color: hsl(120, 100%, 30%);
 }
