@@ -14,10 +14,23 @@
 .section__navigation {
   display: grid;
   grid-template-columns: 1fr auto;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {
   .section__navigation {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section__navigation--buttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .section__navigation--buttons {
     grid-template-columns: 1fr;
   }
 }
