@@ -100,7 +100,7 @@
 			`;
 		}
 
-		document.querySelector(".js-navigationBattons").innerHTML = htmlStringButtons;
+		document.querySelector(".js-navigationButtons").innerHTML = htmlStringButtons;
 	};
 
 	const bindButtonsEvents = () => { };
