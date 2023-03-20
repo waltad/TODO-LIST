@@ -20,7 +20,7 @@
 		render();
 	};
 
-	const taggleTaskDoneHide = (hideDoneTasks) => {
+	const taggleTaskDoneHide = () => {
 		hideDoneTasks = !hideDoneTasks;
 		render();
 	};
@@ -43,6 +43,12 @@
 				taggleTaskDone(index);
 			});
 		});
+	};
+
+	const bindTaggleDoneEventsHide = () => {
+		const taggleDoneHideButton = document.querySelector(".js-taggleDoneHide");
+
+		taggleDoneHideButton.addEventListener("click", taggleTaskDoneHide);
 	};
 
 	const renderTasks = () => {
@@ -68,14 +74,15 @@
 			} else {
 				htmlString += `
 			<li
-			class="list__item"${task.done ? "list__item--hide" : ""}
+			class="list__item${task.done ? "list__item--hide" : ""}"
 			>
-			<button class="js-taggleDone button__task button__task--taggleDone">
+			<button class="${task.done ? "button__task--hide" : "js-taggleDone button__taskjs-taggleDone button__task button__task--taggleDone"}">
+				${task.done ? "&#x2714" : ""}
 			</button>
-			<p>
+			<p class="${task.done ? "list__item--hide" : ""}">
 				${task.content}
 			</p>
-			<button class="js-remove button__task button__task--remove">
+			<button class="${task.done ? "button__task--hide" : "js-remove button__task button__task--remove"}">
 				&#x1F5D1
 			</button>
 			</li>
@@ -91,10 +98,10 @@
 		
 		if (tasks.length !== 0) {
 			htmlStringButtons += `
-			<botton class ="button__navigation">
+			<botton class ="button__navigation js-taggleDoneHide">
 				Ukryj ukończone
 			</botton>
-			<botton class ="button__navigation">
+			<botton class ="button__navigation js-allDone">
 				Ukończ wszystkie
 			</botton>
 			`;
@@ -112,6 +119,9 @@
 		bindRemoveEvents();
 		bindTaggleDoneEvents();
 		bindButtonsEvents();
+		if (tasks.length !== 0) {
+			bindTaggleDoneEventsHide();
+		}
 	};
 
 	const clearValue = (newTask) => {

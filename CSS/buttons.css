@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+.button__task--hide {
+  display: none;
+}
+
 .button__task--taggleDone {
   background-color: hsl(120, 100%, 30%);
 }
@@ -46,8 +50,4 @@
 
 .button__navigation:active {
   color: hsl(180, 100%, 45%);
-}
-
-.button__navigation--hide {
-  display: none;
 }
