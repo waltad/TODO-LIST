@@ -54,8 +54,10 @@
 
 	const bindTaggleDoneEventsHide = () => {
 		const taggleDoneHideButton = document.querySelector(".js-taggleDoneHide");
+		const taggleDoneButtonText = document.querySelector(".js-taggleDoneHideText");
 
 		taggleDoneHideButton.addEventListener("click", taggleTaskDoneHide);
+		taggleDoneButtonText.innerText = hideDoneTasks ? "Pokaż" : "Ukryj";
 	};
 
 	const bindAllTasksDone = () => {
@@ -95,7 +97,7 @@
 		if (tasks.length !== 0) {
 			htmlStringButtons += `
 			<botton class ="button__navigation js-taggleDoneHide">
-				Ukryj ukończone
+				<span class="js-taggleDoneHideText">Ukryj</span> ukończone
 			</botton>
 			<botton class ="button__navigation js-allDone${allTasksDoneButtonOn ? " button__navigation--disabled" : ""}">
 				Ukończ wszystkie
