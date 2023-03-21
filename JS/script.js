@@ -1,6 +1,7 @@
 {
 	let tasks = [];
 	let hideDoneTasks = false;
+	let allTasksDoneButtonOn = false;
 
 	const addNewTask = (newTaskContent) => {
 		tasks = [...tasks,
@@ -27,6 +28,7 @@
 
 	const allTasksDone = () => {
 		tasks = tasks.map(({content, done}) => ({content, done: true}));
+		allTasksDoneButtonOn = true;
 		render();
 	};
 
@@ -60,6 +62,7 @@
 		const allTasksDoneEvent = document.querySelector(".js-allDone");
 
 		allTasksDoneEvent.addEventListener("click", allTasksDone);
+		allTasksDoneEvent.ariaDisabled;
 	}
 
 	const renderTasks = () => {
@@ -94,7 +97,7 @@
 			<botton class ="button__navigation js-taggleDoneHide">
 				Ukryj ukończone
 			</botton>
-			<botton class ="button__navigation js-allDone">
+			<botton class ="button__navigation js-allDone${allTasksDoneButtonOn ? " button__navigation--disabled" : ""}">
 				Ukończ wszystkie
 			</botton>
 			`;
