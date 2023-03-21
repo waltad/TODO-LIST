@@ -50,4 +50,5 @@
 
 .button__navigation--disabled {
   color: hsl(0, 0%, 80%);
+  pointer-events: none;
 }

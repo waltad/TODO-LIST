@@ -28,7 +28,7 @@
 
 	const allTasksDone = () => {
 		tasks = tasks.map(({content, done}) => ({content, done: true}));
-		allTasksDoneButtonOn = true;
+		allTasksDoneButtonOn = !allTasksDoneButtonOn;
 		render();
 	};
 
@@ -62,7 +62,7 @@
 		const allTasksDoneEvent = document.querySelector(".js-allDone");
 
 		allTasksDoneEvent.addEventListener("click", allTasksDone);
-		allTasksDoneEvent.ariaDisabled;
+		allTasksDoneEvent.disabled = true;
 	}
 
 	const renderTasks = () => {
