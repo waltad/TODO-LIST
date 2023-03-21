@@ -27,6 +27,7 @@
 
 	const allTasksDone = () => {
 		tasks = tasks.map(({content, done}) => ({content, done: true}));
+		render();
 	};
 
 	const bindRemoveEvents = () => {
