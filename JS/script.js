@@ -25,6 +25,10 @@
 		render();
 	};
 
+	const allTasksDone = () => {
+		tasks = tasks.map(({content, done}) => ({content, done: true}));
+	};
+
 	const bindRemoveEvents = () => {
 		const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -50,6 +54,12 @@
 
 		taggleDoneHideButton.addEventListener("click", taggleTaskDoneHide);
 	};
+
+	const bindAllTasksDone = () => {
+		const allTasksDoneEvent = document.querySelector(".js-allDone");
+
+		allTasksDoneEvent.addEventListener("click", allTasksDone);
+	}
 
 	const renderTasks = () => {
 		let htmlString = "";
@@ -103,6 +113,7 @@
 		bindButtonsEvents();
 		if (tasks.length !== 0) {
 			bindTaggleDoneEventsHide();
+			bindAllTasksDone();
 		}
 	};
 
