@@ -17,7 +17,11 @@
 	};
 
 	const taggleTaskDone = (taskIndex) => {
-		tasks[taskIndex].done = !tasks[taskIndex].done;
+		tasks = tasks.map(({content, done}, index) => {
+			(index !== taskIndex) ? ({content, done}) :
+			done = !done;
+			return ({content, done})
+		} );
 		render();
 	};
 
