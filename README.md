@@ -15,6 +15,10 @@ https://waltad.github.io/TODO-LIST/
 3. Repeat steps 1 and 2 until you have entered all tasks.
 4. Click the icon on the left if you have completed the task.
 5. Click the icon on the right if you want to delete the task.
+6. If there are any tasks to do, the top menu will appear.
+    - Click the "Hide Completed" button and the completed tasks will disappear from the screen.
+    - Clicking the button again will show all tasks.
+    - Clicking the Complete All button will display all tasks as completed and will disable this button.
 
 ## Tech
 
