@@ -16,7 +16,7 @@
 		render();
 	};
 
-	const taggleTaskDone = (taskIndex) => {
+	const toggleTaskDone = (taskIndex) => {
 		tasks = tasks.map(({content, done}, index) => {
 			(index !== taskIndex) ? ({content, done}) :
 			done = !done;
@@ -25,7 +25,7 @@
 		render();
 	};
 
-	const taggleTaskDoneHide = () => {
+	const toggleTaskDoneHide = () => {
 		hideDoneTasks = !hideDoneTasks;
 		render();
 	};
@@ -46,22 +46,22 @@
 		});
 	};
 
-	const bindTaggleDoneEvents = () => {
-		const taggleDoneButtons = document.querySelectorAll(".js-taggleDone");
+	const bindtoggleDoneEvents = () => {
+		const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");
 
-		taggleDoneButtons.forEach((taggleDoneButton, index) => {
-			taggleDoneButton.addEventListener("click", () => {
-				taggleTaskDone(index);
+		toggleDoneButtons.forEach((toggleDoneButton, index) => {
+			toggleDoneButton.addEventListener("click", () => {
+				toggleTaskDone(index);
 			});
 		});
 	};
 
-	const bindTaggleDoneEventsHide = () => {
-		const taggleDoneHideButton = document.querySelector(".js-taggleDoneHide");
-		const taggleDoneButtonText = document.querySelector(".js-taggleDoneHideText");
+	const bindtoggleDoneEventsHide = () => {
+		const toggleDoneHideButton = document.querySelector(".js-toggleDoneHide");
+		const toggleDoneButtonText = document.querySelector(".js-toggleDoneHideText");
 
-		taggleDoneHideButton.addEventListener("click", taggleTaskDoneHide);
-		taggleDoneButtonText.innerText = hideDoneTasks ? "Pokaż" : "Ukryj";
+		toggleDoneHideButton.addEventListener("click", toggleTaskDoneHide);
+		toggleDoneButtonText.innerText = hideDoneTasks ? "Pokaż" : "Ukryj";
 	};
 
 	const bindAllTasksDone = () => {
@@ -79,7 +79,7 @@
 			<li
 			class="${task.done & hideDoneTasks ? "list__item--hide" : "list__item"}"
 			>
-			<button class="js-taggleDone button__task button__task--taggleDone"}">
+			<button class="js-toggleDone button__task button__task--toggleDone"}">
 				${task.done ? "&#x2714" : ""}
 			</button>
 			<p class="${task.done ? "list__item--done" : ""}">
@@ -100,8 +100,8 @@
 		
 		if (tasks.length !== 0) {
 			htmlStringButtons += `
-			<botton class ="button__navigation js-taggleDoneHide">
-				<span class="js-taggleDoneHideText">Ukryj</span> ukończone
+			<botton class ="button__navigation js-toggleDoneHide">
+				<span class="js-toggleDoneHideText">Ukryj</span> ukończone
 			</botton>
 			<botton class ="button__navigation js-allDone${allTasksDoneButtonOn ? " button__navigation--disabled" : ""}">
 				Ukończ wszystkie
@@ -119,10 +119,10 @@
 		renderButtons();
 
 		bindRemoveEvents();
-		bindTaggleDoneEvents();
+		bindtoggleDoneEvents();
 		bindButtonsEvents();
 		if (tasks.length !== 0) {
-			bindTaggleDoneEventsHide();
+			bindtoggleDoneEventsHide();
 			bindAllTasksDone();
 		}
 	};

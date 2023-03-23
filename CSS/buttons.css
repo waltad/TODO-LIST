@@ -6,15 +6,15 @@
   padding: 0;
 }
 
-.button__task--taggleDone {
+.button__task--toggleDone {
   background-color: hsl(120, 100%, 30%);
 }
 
-.button__task--taggleDone:hover {
+.button__task--toggleDone:hover {
   background-color: hsl(120, 100%, 35%);
 }
 
-.button__task--taggleDone:active {
+.button__task--toggleDone:active {
   background-color: hsl(120, 100%, 40%);
 }
 

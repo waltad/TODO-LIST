@@ -4,14 +4,14 @@
   box-shadow: 0 0 5px #ddd;
 }
 
-.section__header {
+.section__title {
   font-size: 20px;
   padding: 20px;
   margin: 0;
   border-bottom: 1px solid #ddd;
 }
 
-.section__navigation {
+.section__header {
   display: grid;
   grid-template-columns: 1fr auto;
   justify-content: center;
@@ -23,7 +23,7 @@
   }
 }
 
-.section__navigation--buttons {
+.section__buttons {
   display: grid;
   grid-template-columns: auto auto;
   margin: 0;
