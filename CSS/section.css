@@ -7,20 +7,20 @@
 .section__title {
   font-size: 20px;
   padding: 20px;
-  margin: 0;
-  border-bottom: 1px solid #ddd;
+  margin: 0;  
 }
 
 .section__header {
   display: grid;
   grid-template-columns: 1fr auto;
   justify-content: center;
+  border-bottom: 1px solid #ddd;
 }
 
 @media (max-width: 767px) {
-  .section__navigation {
+  .section__header {
     grid-template-columns: 1fr;
-  }
+    }
 }
 
 .section__buttons {
@@ -30,7 +30,7 @@
 }
 
 @media (max-width: 767px) {
-  .section__navigation--buttons {
+  .section__buttons {
     grid-template-columns: 1fr;
   }
 }
