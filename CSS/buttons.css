@@ -8,6 +8,7 @@
 
 .button__task--toggleDone {
   background-color: hsl(120, 100%, 30%);
+  transition: 0.3s;
 }
 
 .button__task--toggleDone:hover {
@@ -21,6 +22,7 @@
 .button__task--remove {
   border: none;
   background-color: hsl(0, 100%, 45%);
+  transition: 0.3s;
 }
 
 .button__task--remove:hover {
@@ -38,6 +40,7 @@
   padding: 20px;
   border-bottom: 1px solid #ddd;
   text-align: center;
+  transition: 0.3s;
 }
 
 .button__navigation:hover {
