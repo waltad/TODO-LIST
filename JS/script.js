@@ -17,11 +17,11 @@
 	};
 
 	const toggleTaskDone = (taskIndex) => {
-		tasks = tasks.map((task, index) => 
-    index !== taskIndex
-			? task
-			: { ...task, done: !task.done }
-  	);
+		tasks = tasks.map((task, index) =>
+			index !== taskIndex
+				? task
+				: { ...task, done: !task.done }
+		);
 		render();
 	};
 
@@ -31,7 +31,7 @@
 	};
 
 	const allTasksDone = () => {
-		tasks = tasks.map(({content, done}) => ({content, done: true}));
+		tasks = tasks.map(({ content, done }) => ({ content, done: true }));
 		allTasksDoneButtonOn = !allTasksDoneButtonOn;
 		render();
 	};
@@ -97,7 +97,7 @@
 
 	const renderButtons = () => {
 		let htmlStringButtons = "";
-		
+
 		if (tasks.length !== 0) {
 			htmlStringButtons += `
 			<botton class ="button__navigation js-toggleDoneHide">
