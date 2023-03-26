@@ -31,7 +31,7 @@
 	};
 
 	const allTasksDone = () => {
-		tasks = tasks.map(({ content, done }) => ({ content, done: true }));
+		tasks = tasks.map((task) => ({ ...task, done: true }));
 		allTasksDoneButtonOn = !allTasksDoneButtonOn;
 		render();
 	};
