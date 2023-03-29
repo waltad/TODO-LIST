@@ -100,12 +100,12 @@
 
 		if (tasks.length !== 0) {
 			htmlStringButtons += `
-			<botton class ="button__navigation js-toggleDoneHide">
+			<button class ="button__navigation js-toggleDoneHide">
 				<span class="js-toggleDoneHideText">Ukryj</span> ukończone
-			</botton>
-			<botton class ="button__navigation js-allDone${allTasksDoneButtonOn ? " button__navigation--disabled" : ""}">
+			</button>
+			<button class ="button__navigation js-allDone${allTasksDoneButtonOn ? " button__navigation--disabled" : ""}">
 				Ukończ wszystkie
-			</botton>
+			</button>
 			`;
 		}
 
