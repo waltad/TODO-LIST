@@ -4,6 +4,7 @@
   width: 30px;
   height: 30px;
   padding: 0;
+  cursor: pointer;
 }
 
 .button__task--toggleDone {
@@ -39,6 +40,7 @@
   color: teal;
   padding: 20px;
   text-align: center;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -58,4 +60,5 @@
 
 .button__navigation:disabled {
   color: hsl(0, 0%, 80%);
+  cursor: not-allowed;
 }
