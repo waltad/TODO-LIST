@@ -56,7 +56,7 @@
   color: hsl(180, 100%, 45%);
 }
 
-.button__navigation--disabled {
+.button__navigation:disabled {
   color: hsl(0, 0%, 80%);
   pointer-events: none;
 }
