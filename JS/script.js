@@ -1,7 +1,6 @@
 {
 	let tasks = [];
 	let hideDoneTasks = false;
-	let allTasksDoneButtonOn = false;
 
 	const addNewTask = (newTaskContent) => {
 		tasks = [...tasks,
@@ -31,8 +30,10 @@
 	};
 
 	const allTasksDone = () => {
-		tasks = tasks.map((task) => ({ ...task, done: true }));
-		allTasksDoneButtonOn = !allTasksDoneButtonOn;
+		tasks = tasks.map((task) => ({
+			...task,
+			done: true
+		}));
 		render();
 	};
 
@@ -68,7 +69,6 @@
 		const allTasksDoneEvent = document.querySelector(".js-allDone");
 
 		allTasksDoneEvent.addEventListener("click", allTasksDone);
-		allTasksDoneEvent.disabled = true;
 	}
 
 	const renderTasks = () => {
@@ -103,7 +103,10 @@
 			<button class ="button__navigation js-toggleDoneHide">
 				<span class="js-toggleDoneHideText">Ukryj</span> ukończone
 			</button>
-			<button class ="button__navigation js-allDone${allTasksDoneButtonOn ? " button__navigation--disabled" : ""}">
+			<button
+				class ="button__navigation js-allDone"
+				${tasks.every(({ done }) => done) ? "disabled" : ""}
+			>
 				Ukończ wszystkie
 			</button>
 			`;
